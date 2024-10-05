@@ -1,12 +1,12 @@
 [package]
-name = "if-watch"
-version = "3.2.1"
-authors = ["David Craven <david@craven.ch>", "Parity Technologies Limited <admin@parity.io>"]
+name = "if-watch-plus"
+version = "1.0.0"
+authors = ["Rawi Sader <rawinsader@gmail.com>"]
 edition = "2021"
 keywords = ["asynchronous", "routing"]
 license = "MIT OR Apache-2.0"
 description = "crossplatform asynchronous network watcher"
-repository = "https://github.com/mxinden/if-watch"
+repository = "https://github.com/RawinSader/if-watch"
 
 [lib]
 crate-type = ["cdylib", "lib"]

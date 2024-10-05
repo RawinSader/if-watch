@@ -1,3 +1,8 @@
+# General
+This is a fork out of https://github.com/mxinden/if-watch
+The original repository is no longer maintained, and prevents cross compilation to ios targets
+This was caused by the `system-configuration@0.5.0` dependency that uses a deprecated iOS interface which would be present in the bindings
+
 # Cross platform asynchronous network watcher
 
 ```sh
