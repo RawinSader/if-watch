@@ -42,6 +42,7 @@ pub struct IfWatcher {
 }
 
 impl IfWatcher {
+    #[allow(dead_code)]
     pub fn new() -> Result<Self> {
         let (tx, rx) = mpsc::channel(1);
         std::thread::spawn(|| background_task(tx));
@@ -76,6 +77,7 @@ impl IfWatcher {
     }
 
     /// Iterate over current networks.
+    #[allow(dead_code)]
     pub fn iter(&self) -> impl Iterator<Item = &IpNet> {
         self.addrs.iter()
     }
@@ -125,14 +127,14 @@ fn ifaddr_to_ipnet(addr: IfAddr) -> IpNet {
         }
     }
 }
-
+#[allow(dead_code)]
 fn callback(_store: SCDynamicStore, _changed_keys: CFArray<CFString>, info: &mut mpsc::Sender<()>) {
     match info.try_send(()) {
         Err(err) if err.is_disconnected() => CFRunLoop::get_current().stop(),
         _ => {}
     }
 }
-
+#[allow(dead_code)]
 fn background_task(tx: mpsc::Sender<()>) {
     let store = SCDynamicStoreBuilder::new("global-network-watcher")
         .callback_context(SCDynamicStoreCallBackContext {
